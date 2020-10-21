@@ -11,10 +11,10 @@ namespace ejercicio_1_numeros_primos_ajsinoga
             switch(opcion)
             {
                 case "1":
-                    Console.WriteLine("Suma 50 primeros números primos = " + SumOf50FirstPrimeNumbers().ToString());
+                    Console.WriteLine("Suma 50 primeros números primos = " + sumOf50FirstPrimeNumbers().ToString());
                     break;
                 case "2":
-                    Console.WriteLine("Suma de los primos que hay en los 50 primeros números = " + SumOfPrimeNumbersIn50FirstNumbers().ToString());
+                    Console.WriteLine("Suma de los primos que hay en los 50 primeros números = " + sumOfPrimeNumbersIn50FirstNumbers().ToString());
                     break;
                 default:
                     break;
@@ -25,17 +25,17 @@ namespace ejercicio_1_numeros_primos_ajsinoga
         {
             string opcion = "";
 
-            Console.WriteLine("\nElige 1 para la suma de los 50 primeros números primos.\nElige 2 para la suma de los primos que hay en los 50 primeros números...");
-            opcion = Console.ReadLine();
-            while (!opcion.Equals("1") && !opcion.Equals("2"))
+            do
             {
+                Console.WriteLine("\nElige 1 para la suma de los 50 primeros números primos.\nElige 2 para la suma de los primos que hay en los 50 primeros números...");
                 opcion = Console.ReadLine();
             }
-            
+            while (!opcion.Equals("1") && !opcion.Equals("2"));                    
+                       
             return opcion;            
         }
 
-        static int SumOf50FirstPrimeNumbers()
+        static int sumOf50FirstPrimeNumbers()
         {
             int number = 1;
             int totalPrimeNumbers = 0;
@@ -54,7 +54,7 @@ namespace ejercicio_1_numeros_primos_ajsinoga
             return sumTotal;
         }   /* resultado 5350 */
 
-        static int SumOfPrimeNumbersIn50FirstNumbers()
+        static int sumOfPrimeNumbersIn50FirstNumbers()
         {    
             int sumTotal = 0;
             
